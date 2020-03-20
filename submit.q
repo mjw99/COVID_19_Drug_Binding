@@ -60,11 +60,9 @@ source activate openmm
 
 
 #! Full path to application executable: 
-#application="yank"
 application="~/.conda/envs/openmm/bin/mpirun -configfile configfile -f machine.file.$SLURM_JOB_ID"
 
 #! Run options for the application:
-#options="script --yaml=explicit.yaml"
 options=""
 
 #! Work directory (i.e. where the job will run):
