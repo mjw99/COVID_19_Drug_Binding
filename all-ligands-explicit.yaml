@@ -1,0 +1,65 @@
+# Set the general options of our simulation
+options:
+  minimize: yes
+  verbose: yes
+  number_of_iterations: 500
+  temperature: 300*kelvin
+  pressure: 1*atmosphere
+  output_dir: all-ligands-explicit-output
+
+# Configure the specific molecules we will use for our systems
+molecules:
+  # Define our receptor, T4-Lysozyme, we can call it whatever we want so we just use its name here as the directive
+  t4-lysozyme:
+    filepath: input/receptor.pdbfixer.pdb
+  # Define our ligands
+  binders:
+    # This is actually a "CSV" file where the delimiter is a comma or a
+    # semicolon, and each row contains the SMILES representation of a molecule.
+    filepath: input/6Y84-binders.csv
+    antechamber:
+      charge_method: bcc
+    # Choose to simulate all molecules (1 at a time).
+    # This is the default behavior but we specify it for this example
+    select: all
+
+# Define the solvent for our system
+solvents:
+  pme:
+    nonbonded_method: PME
+    nonbonded_cutoff: 9*angstroms
+    clearance: 16*angstroms
+    positive_ion: Na+
+    negative_ion: Cl-
+
+systems:
+  t4-ligand:
+    receptor: t4-lysozyme
+    ligand: binders
+    solvent: pme
+    leap:
+      parameters: [leaprc.protein.ff14SB, leaprc.gaff2, leaprc.water.tip4pew]
+    # When ligands are generated from SMILES they have a random position.
+    # Setting "pack: yes" pulls the ligand close to the receptor ensuring
+    # that your solvation box won't be too big.
+    pack: yes
+
+protocols:
+  absolute-binding:
+    complex:
+      alchemical_path:
+        lambda_electrostatics: [1.00, 1.00, 1.00, 1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.40, 0.30, 0.20, 0.10, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+        lambda_sterics:        [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.40, 0.30, 0.20, 0.10, 0.00]
+        # Set lambda restraints reverse of coupling parameter.
+        lambda_restraints:     [0.00, 0.25, 0.50, 0.75, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    solvent:
+      alchemical_path:
+        lambda_electrostatics: [1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.40, 0.30, 0.20, 0.10, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+        lambda_sterics:        [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.40, 0.30, 0.20, 0.10, 0.00]
+
+# Here we combine the system and the protocol to make an experiment
+experiments:
+  system: 6Y84-ligand
+  protocol: absolute-binding
+  restraint:
+    type: Harmonic # Keep the ligand near the protein
