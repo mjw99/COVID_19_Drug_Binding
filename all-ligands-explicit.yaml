@@ -9,8 +9,8 @@ options:
 
 # Configure the specific molecules we will use for our systems
 molecules:
-  # Define our receptor, T4-Lysozyme, we can call it whatever we want so we just use its name here as the directive
-  t4-lysozyme:
+  # Define our receptor, we can call it whatever we want so we just use its name here as the directive
+  6Y84:
     filepath: input/receptor.pdbfixer.pdb
   # Define our ligands
   binders:
@@ -33,8 +33,8 @@ solvents:
     negative_ion: Cl-
 
 systems:
-  t4-ligand:
-    receptor: t4-lysozyme
+  6Y84-ligand:
+    receptor: 6Y84
     ligand: binders
     solvent: pme
     leap:
