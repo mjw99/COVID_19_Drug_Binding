@@ -1,7 +1,7 @@
 # COVID_19_Drug_Binding
-A screen of drug fragments against SARS-CoV-2 main protease using YANK
+A screen of drug fragments against SARS-CoV-2 main protease using [YANK](http://getyank.org/latest/)
 
-# Initial setup of conda enviroment on Wilkes2
+# Initial setup of conda enviroment on [Wilkes2](https://www.hpc.cam.ac.uk/systems/wilkes-2)
 1) Login
 ```
 ssh login-gpu.hpc.cam.ac.uk
