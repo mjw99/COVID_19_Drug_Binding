@@ -1,0 +1,4 @@
+-np 1 -env CUDA_VISIBLE_DEVICES 0 yank script --yaml=explicit.yaml
+-np 1 -env CUDA_VISIBLE_DEVICES 1 yank script --yaml=explicit.yaml
+-np 1 -env CUDA_VISIBLE_DEVICES 2 yank script --yaml=explicit.yaml
+-np 1 -env CUDA_VISIBLE_DEVICES 3 yank script --yaml=explicit.yaml
