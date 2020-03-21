@@ -32,3 +32,8 @@ conda config --add channels omnia --add channels conda-forge
 conda install -y yank
 conda install -y mpi4py
 ```
+
+6) Install OpenBabel
+```
+conda install -y openbabel
+```
