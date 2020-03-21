@@ -6,17 +6,17 @@ options:
   temperature: 300*kelvin
   pressure: 1*atmosphere # To run with NVT ensemble, set this option to "null". Defaults to 1 atm if excluded
   platform: CUDA
-  output_dir: p-xylene-explicit-output
+  output_dir: x0072-explicit-trailblazing-output
 
 # Configure the specific molecules we will use for our systems
 # Note: We do not specify what the "receptor" and what the "ligand" is yet
 molecules:
   # Define our receptor, we can call it whatever we want so we just use its name here as the directive
   6Y84:
-    filepath: input/receptor.pdbfixer.pdb
+    filepath: input/x0072.pdbfixer.pdb
   # Define our ligand molecule
   p-xylene:
-    filepath: input/ligand.tripos.mol2
+    filepath: input/x0072.mol2
     # Get the partial charges for the ligand by generating them from antechamber with the AM1-BCC charge method
     antechamber:
       charge_method: bcc
@@ -39,8 +39,8 @@ systems:
   # We can call our system anything we want, this example just uses a short name for the receptor hyphenated with the ligand
   6Y84-xylene:
     # These names all use the names we defined previously
-    receptor: 6Y84
-    ligand: p-xylene
+    receptor: mpro
+    ligand: x0072
     solvent: pme
     leap:
       parameters: [leaprc.protein.ff14SB, leaprc.gaff2, leaprc.water.tip4pew]
@@ -61,7 +61,7 @@ protocols:
 
 # Here we combine the system and the protocol to make an experiment
 experiments:
-  system: 6Y84-xylene
+  system: mpro-x0072
   protocol: forward-20-bidirectional
   restraint:
     type: Harmonic # Keep the ligand near the protein
