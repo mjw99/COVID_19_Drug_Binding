@@ -1,10 +1,18 @@
 # Set the general options of our simulation
 options:
-  minimize: yes
   verbose: yes
   default_number_of_iterations: 500
   temperature: 300*kelvin
   pressure: 1*atmosphere # To run with NVT ensemble, set this option to "null". Defaults to 1 atm if excluded
+  hydrogen_mass: 3.0 * amu
+  constraints: HBonds
+  anisotropic_dispersion_cutoff: auto
+  minimize: yes
+  default_number_of_iterations: 0
+  # Each iteration is about 1ps/replica.
+  default_nsteps_per_iteration: 286
+  default_timestep: 3.5*femtoseconds
+  checkpoint_interval: 1000
   platform: CUDA
   output_dir: x0072-explicit-trailblazing-output
 
