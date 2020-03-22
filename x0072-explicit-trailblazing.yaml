@@ -1,7 +1,6 @@
 # Set the general options of our simulation
 options:
   verbose: yes
-  default_number_of_iterations: 500
   temperature: 300*kelvin
   pressure: 1*atmosphere # To run with NVT ensemble, set this option to "null". Defaults to 1 atm if excluded
   hydrogen_mass: 3.0 * amu
