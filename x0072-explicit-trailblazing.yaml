@@ -73,6 +73,10 @@ experiments:
   protocol: forward-20-bidirectional
   restraint:
     type: Harmonic # Keep the ligand near the protein
+    restrained_ligand_atoms: (resname LIG) and (mass > 1.5)
+    restrained_receptor_atoms: (resi 41 or resi 49 or resi 145 or resi 163 or resi 164 or resi 165 or resi 189) and (mass > 1.5)
+    spring_constant: 0.5 * kilocalories_per_mole/(angstrom**2)
+
     # We set a harmonic restraint which biases the ligand to remain close to the receptor when it is decoupled
     # to prevent it from drifting into the whole box and possibly never visiting the binidng site again.
     # The Harmonic restraint is fairly weak since it restrains a single ligand atom to the centroid-most receptor atom,
