@@ -20,10 +20,10 @@ options:
 # Note: We do not specify what the "receptor" and what the "ligand" is yet
 molecules:
   # Define our receptor, we can call it whatever we want so we just use its name here as the directive
-  6Y84:
+  mpro:
     filepath: input/x0072.pdbfixer.pdb
   # Define our ligand molecule
-  p-xylene:
+  x0072:
     filepath: input/x0072.mol2
     # Get the partial charges for the ligand by generating them from antechamber with the AM1-BCC charge method
     antechamber:
