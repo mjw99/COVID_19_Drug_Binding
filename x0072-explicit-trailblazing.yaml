@@ -45,7 +45,7 @@ solvents:
 # Define the systems: What is the ligand, receptor, and solvent we put them in
 systems:
   # We can call our system anything we want, this example just uses a short name for the receptor hyphenated with the ligand
-  6Y84-xylene:
+  mpro-x0072:
     # These names all use the names we defined previously
     receptor: mpro
     ligand: x0072
