@@ -1,1 +1,1 @@
--np 1 -env CUDA_VISIBLE_DEVICES 0 yank script --yaml=x0072-explicit.yaml
+-np 1 -env CUDA_VISIBLE_DEVICES 0 yank script --yaml=x0072-explicit-trailblazing.yaml
