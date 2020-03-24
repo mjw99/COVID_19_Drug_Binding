@@ -1,5 +1,5 @@
 # COVID_19_Drug_Binding
-A inital screen of drug fragments against SARS-CoV-2 main protease using [YANK](http://getyank.org/latest/).
+A attempt at an inital screen of drug fragments against SARS-CoV-2 main protease using [YANK](http://getyank.org/latest/).
 The aim here is to rank the 19 non-covalent hits from the [crystal-based fragment](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem.html) screen at the XChem facility at UK’s Diamond Light Source.
 
 # Initial setup of conda environment on [Wilkes2](https://www.hpc.cam.ac.uk/systems/wilkes-2)
@@ -37,4 +37,15 @@ conda install -y mpi4py
 6) Install OpenBabel
 ```
 conda install -y openbabel
+```
+
+7) Submit initial test job
+```
+sbatch submit.q
+```
+
+# Running standalone on test machine
+```
+yank script --yaml x0072-explicit-trailblazing.yaml
+yank analyze --store=./x0072-explicit-trailblazing-output/experiments
 ```
