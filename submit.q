@@ -60,7 +60,7 @@ source activate openmm
 
 
 #! Full path to application executable: 
-application="~/.conda/envs/openmm/bin/mpirun -configfile configfile -f machine.file.$SLURM_JOB_ID"
+application="yank script --yaml x0072-explicit-trailblazing.yaml"
 
 #! Run options for the application:
 options=""
