@@ -36,7 +36,7 @@ solvents:
     nonbonded_cutoff: 9*angstroms # Cutoff between short- and long-range interactions
     # Define how far away the periodic boundaries are from the receptor.
     # The volume will be filled with TIP3P water through LEaP
-    clearance: 16*angstroms
+    clearance: 12*angstroms
     # If ions are needed to neutralize the system, add these specific ions
     positive_ion: Na+
     negative_ion: Cl-
