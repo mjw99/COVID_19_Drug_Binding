@@ -58,12 +58,12 @@ protocols:
     complex:
       trailblazer_options:
         reversed_direction: no
-        thermodynamic_distance: 2.0
+        thermodynamic_distance: 3.0
       alchemical_path: auto
     solvent:
       trailblazer_options:
         reversed_direction: no
-        thermodynamic_distance: 2.0
+        thermodynamic_distance: 3.0
       alchemical_path: auto
 
 # Here we combine the system and the protocol to make an experiment
