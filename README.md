@@ -33,6 +33,7 @@ conda config --add channels omnia --add channels conda-forge
 conda install -y yank
 conda install -y mpi4py
 conda install -y pymbar=3.0.3
+conda install -y seaborn matplotlib jupyter
 ```
 
 6) Install OpenBabel
@@ -49,4 +50,5 @@ sbatch submit.q
 ```
 yank script --yaml x0072-explicit-trailblazing.yaml
 yank analyze --store=./x0072-explicit-trailblazing-output/experiments
+yank analyze report --store=./x0072-explicit-trailblazing-output_long/experiments --output=x0072-explicit-trailblazing.html --format html
 ```
