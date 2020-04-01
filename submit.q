@@ -10,7 +10,7 @@
 
 #! sbatch directives begin here ###############################
 #! Name of the job:
-#SBATCH -J cov-19_x0072
+#SBATCH -J covid-19_x0072
 #! Which project should be charged (NB Wilkes2 projects end in '-GPU'):
 #SBATCH -A HUNTER-SL3-GPU
 #! How many whole nodes should be allocated?
