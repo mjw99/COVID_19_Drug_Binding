@@ -29,7 +29,7 @@
 #! interrupted by node failure or system downtime):
 ##SBATCH --no-requeue
 
-#SBATCH --array=1-5%1   # Run a 5-job array, one job at a time. Restarts will be used.
+#SBATCH --array=1-10%1   # Run a 10-job array, one job at a time. Restarts will be used.
 
 #! Do not change:
 #SBATCH -p pascal
