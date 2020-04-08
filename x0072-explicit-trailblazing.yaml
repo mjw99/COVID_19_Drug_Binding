@@ -11,7 +11,7 @@ options:
   # Each iteration is about 1ps/replica.
   default_nsteps_per_iteration: 286
   default_timestep: 3.5*femtoseconds
-  checkpoint_interval: 100
+  checkpoint_interval: 500
   platform: CUDA
   output_dir: x0072-explicit-trailblazing-output_1
 

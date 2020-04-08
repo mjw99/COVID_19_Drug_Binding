@@ -12,7 +12,7 @@
 #! Name of the job:
 #SBATCH -J covid-19_x0072
 #! Which project should be charged (NB Wilkes2 projects end in '-GPU'):
-#SBATCH -A HUNTER-SL3-GPU
+#SBATCH -A COVID19DOCK-SL2-GPU
 #! How many whole nodes should be allocated?
 #SBATCH --nodes=1
 #! How many (MPI) tasks will there be in total?
@@ -22,14 +22,14 @@
 #! Note that the job submission script will enforce no more than 3 cpus per GPU.
 #SBATCH --gres=gpu:1
 #! How much wallclock time will be required?
-#SBATCH --time=12:00:00
+#SBATCH --time=72:00:00
 #! What types of email messages do you wish to receive?
 #SBATCH --mail-type=FAIL
 #! Uncomment this to prevent the job from being requeued (e.g. if
 #! interrupted by node failure or system downtime):
 ##SBATCH --no-requeue
 
-#SBATCH --array=1-10%1   # Run a 10-job array, one job at a time. Restarts will be used.
+#SBATCH --array=1-3%1   # Run a 3-job array, one job at a time. Restarts will be used.
 
 #! Do not change:
 #SBATCH -p pascal
