@@ -58,12 +58,12 @@ protocols:
   forward-20-bidirectional:
     complex:
       trailblazer_options:
-        reversed_direction: no
+        reversed_direction: yes
         thermodynamic_distance: 1.5
       alchemical_path: auto
     solvent:
       trailblazer_options:
-        reversed_direction: no
+        reversed_direction: yes
         thermodynamic_distance: 1.5
       alchemical_path: auto
 
