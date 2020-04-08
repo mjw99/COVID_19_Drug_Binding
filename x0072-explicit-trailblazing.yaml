@@ -13,7 +13,7 @@ options:
   default_timestep: 3.5*femtoseconds
   checkpoint_interval: 100
   platform: CUDA
-  output_dir: x0072-explicit-trailblazing-output_single_1
+  output_dir: x0072-explicit-trailblazing-output_1
 
 
 # Configure the specific molecules we will use for our systems
