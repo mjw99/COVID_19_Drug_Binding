@@ -28,7 +28,7 @@ source activate openmm
 
 5) Install OpenMM and YANK
 ```
-conda install -y -c omnia/label/cuda101 -c omnia openmm=7.4.1
+conda install -y -c omnia/label/cuda101 -c omnia openmm=7.4.2
 conda config --add channels omnia --add channels conda-forge
 conda install -y yank
 conda install -y mpi4py
