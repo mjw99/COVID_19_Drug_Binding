@@ -22,23 +22,22 @@ module add cuda/10.1
 
 4) Create an OpenMM environment
 ```
-conda create --name openmm python=3.7
+conda create --name openmm python=3.8
 source activate openmm
 ```
 
 5) Install OpenMM and YANK
 ```
-conda install -y -c omnia/label/cuda101 -c omnia openmm=7.4.2
-conda config --add channels omnia --add channels conda-forge
-conda install -y yank
-conda install -y mpi4py
-conda install -y pymbar=3.0.3
-conda install -y seaborn matplotlib jupyter
+conda install -y -c conda-forge openmm=7.5.1 cudatoolkit=10.1
+conda install -y -c conda-forge yank
+conda install -y -c conda-forge mpi4py
+conda install -y -c conda-forge pymbar
+conda install -y -c conda-forge seaborn matplotlib jupyter
 ```
 
 6) Install OpenBabel
 ```
-conda install -y openbabel
+conda install -y -c conda-forge openbabel
 ```
 
 7) Submit initial test job
